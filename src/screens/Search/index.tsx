@@ -1,9 +1,10 @@
 import logo from '../../assets/Logo.png';
+import bg from '../../assets/background.png';
 import {Container, Content, ImageCont, SubTitle, TextB, Title} from './styles';
 
 export function Search() {
   return (
-    <Container>
+    <Container source={bg} resizeMode="cover">
       <ImageCont source={logo} resizeMode="cover" />
 
       <Content>
