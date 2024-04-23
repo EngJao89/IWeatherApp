@@ -1,4 +1,5 @@
 import {TouchableOpacity} from 'react-native';
+import {Input} from '../Input';
 import {CityProps} from '../../services/getCityByNameService';
 import {Container, Options, Title} from './styles';
 
@@ -14,6 +15,12 @@ type Props = {
 export function SelectList(props: Props) {
   return (
     <Container>
+      <Input
+        placeholder={props.placeholder}
+        onChangeText={props.onChange}
+        isLoading={props.isLoading}
+        value={props.value}
+      />
       <Options>
         {props.data.map(item => (
           <TouchableOpacity

@@ -5,11 +5,13 @@ export const Container = styled.ImageBackground`
   padding: 24px;
   padding-top: 48px;
   align-items: center;
+  background-color: ${({theme}) => theme.COLORS.GRAY_800};
 `;
 
 export const ImageCont = styled.Image`
   width: 186px;
   height: 32px;
+  margin-top: 20px;
 `;
 
 export const Content = styled.View`
