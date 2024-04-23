@@ -2,6 +2,7 @@ import {useEffect, useState} from 'react';
 import logo from '../../assets/Logo.png';
 import bg from '../../assets/background.png';
 import {SelectList} from '../../components/SelectList';
+import {useCity} from '../../hooks/useCity';
 import {
   CityProps,
   getCityByNameService,
