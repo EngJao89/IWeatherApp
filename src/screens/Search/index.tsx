@@ -1,5 +1,6 @@
 import logo from '../../assets/Logo.png';
 import bg from '../../assets/background.png';
+import {SelectList} from '../../components/SelectList';
 import {Container, Content, ImageCont, SubTitle, TextB, Title} from './styles';
 
 export function Search() {
@@ -12,6 +13,8 @@ export function Search() {
           Boas vindas ao <TextB>IWeather</TextB>
         </Title>
         <SubTitle>Escolha um local para ver a previsão do tempo</SubTitle>
+
+        <SelectList placeholder="Buscar local" />
       </Content>
     </Container>
   );
