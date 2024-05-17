@@ -26,6 +26,7 @@ export default {
     MD: 16,
     LG: 20,
     XL: 36,
+    XXL: 48,
 
     TAG: 10,
     BUTTON: 14,
