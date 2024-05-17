@@ -1,6 +1,9 @@
 import {View} from 'react-native';
 import dayjs from 'dayjs';
 
+import {isDayTime} from '../../utils/isDayTime';
+import {weatherIcons} from '../../utils/weatherIcons';
+
 import {
   City,
   Container,
