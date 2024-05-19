@@ -1,12 +1,21 @@
 import {useEffect, useState} from 'react';
 import {useCity} from '../../hooks/useCity';
-import {getWeatherByCityService, WeatherResponseProps} from '../../services/getWeatherByCityService';
+import {
+  getWeatherByCityService,
+  WeatherResponseProps,
+} from '../../services/getWeatherByCityService';
 import {
   CityProps,
   getCityByNameService,
 } from '../../services/getCityByNameService';
-import {Container, Title} from './styles';
-import { Loading } from '../../components/Loading';
+
+import {Loading} from '../../components/Loading';
+import {SelectList} from '../../components/SelectList';
+import {WeatherToday} from '../../components/WeatherToday';
+import {ScrollView, StyleSheet} from 'react-native';
+import {WeatherDetails} from '../../components/WeatherDetails';
+import {NextDays} from '../../components/NextDays';
+import {Container} from './styles';
 
 export function Dashboard() {
   const [search, setSearch] = useState('');
@@ -53,7 +62,7 @@ export function Dashboard() {
       return;
     }
 
-    getCities(search)
+    getCities(search);
     const debounce = setTimeout(() => getCities(search), 500);
 
     return () => clearInterval(debounce);
@@ -68,7 +77,31 @@ export function Dashboard() {
   }
   return (
     <Container>
-      <Title>IWeather APP</Title>
+      <SelectList
+        data={cities}
+        value={search}
+        onChange={setSearch}
+        onPress={handleSelect}
+        isLoading={isSearching}
+        placeholder="Buscar local"
+      />
+
+      <WeatherToday city={city.name} weather={weather.today.weather} />
+
+      <ScrollView
+        contentContainerStyle={styles.scroll}
+        showsVerticalScrollIndicator={false}>
+        <WeatherDetails data={weather.today.details} />
+
+        <NextDays data={weather.nextDays} />
+      </ScrollView>
     </Container>
   );
 }
+
+const styles = StyleSheet.create({
+  scroll: {
+    gap: 8,
+    paddingBottom: 32,
+  },
+});

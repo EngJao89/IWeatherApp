@@ -1,8 +1,8 @@
-import sun from '@assets/sun.svg';
-import rain from '@assets/rain.svg';
-import wind from '@assets/wind.svg';
-import drop from '@assets/drop.svg';
-import thermometer from '@assets/thermometer.svg';
+import sun from '../../assets/sun.svg';
+import rain from '../../assets/rain.svg';
+import wind from '../../assets/wind.svg';
+import drop from '../../assets/drop.svg';
+import thermometer from '../../assets/thermometer.svg';
 
 import {WeatherItem} from '../WeatherItem';
 import {Container} from './styles';
