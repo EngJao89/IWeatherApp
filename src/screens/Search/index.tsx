@@ -35,6 +35,16 @@ export function Search() {
     return () => clearInterval(debounce);
   }, [search]);
 
+  useEffect(() => {
+    if (search.trim().length === 0) {
+      return;
+    }
+
+    const debounce = setTimeout(() => getCities(search), 500);
+
+    return () => clearInterval(debounce);
+  }, [search]);
+
   return (
     <Container source={bg} resizeMode="cover">
       <ImageCont source={logo} resizeMode="cover" />
