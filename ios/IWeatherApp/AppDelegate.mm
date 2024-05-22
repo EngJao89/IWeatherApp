@@ -2,10 +2,14 @@
 
 #import <React/RCTBundleURLProvider.h>
 
+#import <React/RCTRootView.h>
+#import <ReactNativeScreens/ReactNativeScreens.h>
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+  [RNScreensPackage load];
   self.moduleName = @"IWeatherApp";
   // You can add your custom initial props in the dictionary below.
   // They will be passed down to the ViewController used by React Native.
